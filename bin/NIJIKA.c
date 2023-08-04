@@ -31,7 +31,7 @@ int imageFile(const char* filename){
 }
 
 void SetWallpaper(const char* FinalPath){
-    SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, (void*)FinalPath, SPIF_UPDATEINIFILE);
+    SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, (void*)FinalPath, SPIF_UPDATEINIFILE | SPIF_SENDCHANGE);
 }
 
 void WallpaperSelect(const char* wallpapersPath, const char* selectedPath, int i){
