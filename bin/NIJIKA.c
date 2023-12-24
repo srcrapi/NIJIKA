@@ -192,7 +192,7 @@ int CreatingNijikaFolder(){
     char documentsPath[MAX_PATH];
     char nijikaPath[MAX_PATH];
 
-    if (SHGetFolderPathA(NULL, CSIDL_MYDOCUMENTS, NULL, 0, documentsPath) != S_OK){
+    if (SHGetFolderPathA(NULL, CSIDL_PERSONAL, NULL, 0, documentsPath) != S_OK){
 
         printf("-> Error trying to get Documents Path.\n");
         return 1;
@@ -219,17 +219,20 @@ int CreatingNijikaFolder(){
 
 int main(){
 
-    printf("\nWelcome to NIJIKA !\n\n");
-    printf("########################################\n");
-    printf("#                                      #\n");
-    printf("#               NIJIKA 1.0             #\n");
-    printf("#                                      #\n");
-    printf("#          NIJIKA is a wallpaper       #\n");
-    printf("#    changer based in one directory    #\n");
-    printf("#                                      #\n");
-    printf("########################################\n\n");
+    printf("\n+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("|               NIJIKA 1.0             |\n");
+    printf("|                                      |\n");
+    printf("|          NIJIKA is a wallpaper       |\n");
+    printf("|    changer based in one directory    |\n");
+    printf("|               By rap1                |\n");
+    printf("|                                      |\n");
+    printf("+--------------------------------------+\n\n");
+    printf("\t   Welcome to NIJIKA !\n\n");
 
-    system("pause");
+    printf("-> Press any key to continue...\n");
+
+    system("pause > null");
 
     CreatingNijikaFolder();
 
