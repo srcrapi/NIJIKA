@@ -54,7 +54,7 @@ void WallpaperSelect(const char* wallpapersPath, const char* selectedPath, int i
 
             hfind = FindFirstFile(selectedPath, &findFileData);
 
-            int j = 0;
+            int j = 1;
 
             do{
                 if (imageFile(findFileData.cFileName)){
@@ -78,7 +78,7 @@ void WallpaperSelect(const char* wallpapersPath, const char* selectedPath, int i
     Sleep(500);
     printf("\n-> Exiting.");
 
-    for (int b = 0; b < 4; b++){
+    for (int b = 0; b < 3; b++){
         Sleep(300);
         printf(".");
     }
@@ -126,16 +126,16 @@ void listImage(const char* filePath){
 
         if(imageFile(findFileData.cFileName)){
 
-            printf("-> %d: %s\n", i - 1, findFileData.cFileName, i++);
+            printf("-> %d: %s\n", i, findFileData.cFileName, i++);
         }
 
     }while(FindNextFile(hfind, &findFileData) != 0);
 
     FindClose(hfind);
 
-    printf("-> %d: Exit\n", i);
+    printf("-> %d: Exit\n", i + 1);
 
-    WallpaperSelect(wallpapersPath, selectedPath, i);
+    WallpaperSelect(wallpapersPath, selectedPath, i + 1);
 
 }
 
@@ -218,6 +218,7 @@ int CreatingNijikaFolder(){
 }
 
 int main(){
+    system("cls");
 
     printf("\n+--------------------------------------+\n");
     printf("|                                      |\n");
